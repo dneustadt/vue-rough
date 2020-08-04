@@ -1,0 +1,36 @@
+{
+  "name": "vue-rough",
+  "version": "1.0.0",
+  "description": "A small components library to use Rough.js in Vue.",
+  "homepage": "https://vue-rough.neustadt.dev",
+  "bugs": {
+    "url": "https://github.com/dneustadt/vue-rough/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dneustadt/vue-rough.git"
+  },
+  "license": "MIT",
+  "author": "David Neustadt <d@neustadt.dev> (https://neustadt.dev)",
+  "contributors": [
+    "David Neustadt <d@neustadt.dev>"
+  ],
+  "main": "dist/VueRough.umd.min.js",
+  "unpkg": "dist/VueRough.umd.min.js",
+  "module": "dist/VueRough.common.js",
+  "scripts": {
+    "build": "vue-cli-service build --target lib --name VueRough src/index.js && rm ./dist/demo.html"
+  },
+  "dependencies": {
+    "roughjs": "^4.3.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.4.0",
+    "@vue/cli-plugin-eslint": "~4.4.0",
+    "@vue/cli-service": "~4.4.0",
+    "roughjs": "^4.3.1"
+  },
+  "peerDependencies": {
+    "roughjs": "^4.3.1"
+  }
+}
