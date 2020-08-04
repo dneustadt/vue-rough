@@ -2,29 +2,29 @@
     import element from "../mixins/element";
 
     export default {
-        name: 'RoughRectangle',
+        name: 'RoughEllipse',
         mixins: [ element ],
         props: {
-            x1: {
+            x: {
                 type: Number,
                 default: 0
             },
-            y1: {
+            y: {
                 type: Number,
                 default: 0
             },
-            x2: {
+            width: {
                 type: Number,
                 default: 0
             },
-            y2: {
+            height: {
                 type: Number,
                 default: 0
             }
         },
         methods: {
             handler(forceRender = false) {
-                this.createElement('rectangle', [this.x1, this.y1, this.x2, this.y2], forceRender);
+                this.createElement('ellipse', [this.x, this.y, this.width, this.height], forceRender);
             }
         }
     };

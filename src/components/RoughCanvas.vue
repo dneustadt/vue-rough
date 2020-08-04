@@ -1,5 +1,8 @@
 <template>
-    <canvas>
+    <canvas
+        :width="width"
+        :height="height"
+    >
         <slot v-if="rough" />
     </canvas>
 </template>
@@ -10,6 +13,8 @@
     export default {
         name: 'RoughCanvas',
         props: {
+            width: String,
+            height: String,
             config: Object
         },
         rendering: false,

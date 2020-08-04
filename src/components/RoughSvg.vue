@@ -1,5 +1,8 @@
 <template>
-    <svg>
+    <svg
+        :width="width"
+        :height="height"
+    >
         <slot v-if="rough" />
     </svg>
 </template>
@@ -10,6 +13,8 @@
     export default {
         name: 'RoughSvg',
         props: {
+            width: String,
+            height: String,
             config: Object
         },
         data() {

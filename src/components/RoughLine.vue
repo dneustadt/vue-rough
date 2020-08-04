@@ -22,17 +22,10 @@
                 default: 0
             }
         },
-        mounted() {
-            this.$watch('$props', () => { this.handler() }, { deep: true });
-            this.handler();
-        },
         methods: {
             handler(forceRender = false) {
                 this.createElement('line', [this.x1, this.y1, this.x2, this.y2], forceRender);
             }
-        },
-        render() {
-            return this.$scopedSlots;
         }
     };
 </script>

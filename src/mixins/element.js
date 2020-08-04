@@ -28,6 +28,13 @@ export default {
             element: null
         };
     },
+    mounted() {
+        this.$watch('$props', () => { this.handler() }, { deep: true });
+        this.handler();
+    },
+    render() {
+        return this.$scopedSlots;
+    },
     methods: {
         createElement: function (func, ops, forceRender = false) {
             const rough = this.$parent.rough;
