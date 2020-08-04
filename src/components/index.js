@@ -5,3 +5,7 @@ export { default as RoughRectangle } from './RoughRectangle';
 export { default as RoughEllipse } from './RoughEllipse';
 export { default as RoughCircle } from './RoughCircle';
 export { default as RoughLinearPath } from './RoughLinearPath';
+export { default as RoughPolygon } from './RoughPolygon';
+export { default as RoughArc } from './RoughArc';
+export { default as RoughCurve } from './RoughCurve';
+export { default as RoughPath } from './RoughPath';

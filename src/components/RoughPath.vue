@@ -2,17 +2,17 @@
     import element from "../mixins/element";
 
     export default {
-        name: 'RoughLinearPath',
+        name: 'RoughPath',
         mixins: [ element ],
         props: {
-            points: {
-                type: Array,
+            d: {
+                type: String,
                 required: true
             }
         },
         methods: {
             handler(forceRender = false) {
-                this.createElement('linearPath', [this.points], forceRender);
+                this.createElement('path', [this.d], forceRender);
             }
         }
     };

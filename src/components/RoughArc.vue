@@ -2,33 +2,48 @@
     import element from "../mixins/element";
 
     export default {
-        name: 'RoughRectangle',
+        name: 'RoughArc',
         mixins: [ element ],
         props: {
-            x1: {
+            x: {
                 type: Number,
                 default: 0,
                 required: true
             },
-            y1: {
+            y: {
                 type: Number,
                 default: 0,
                 required: true
             },
-            x2: {
+            width: {
                 type: Number,
                 default: 0,
                 required: true
             },
-            y2: {
+            height: {
                 type: Number,
                 default: 0,
+                required: true
+            },
+            start: {
+                type: Number,
+                default: 0,
+                required: true
+            },
+            stop: {
+                type: Number,
+                default: 0,
+                required: true
+            },
+            closed: {
+                type: Boolean,
+                default: false,
                 required: true
             }
         },
         methods: {
             handler(forceRender = false) {
-                this.createElement('rectangle', [this.x1, this.y1, this.x2, this.y2], forceRender);
+                this.createElement('arc', [this.x, this.y, this.width, this.height, this.start, this.stop, this.closed], forceRender);
             }
         }
     };

@@ -7,15 +7,18 @@
         props: {
             x: {
                 type: Number,
-                default: 0
+                default: 0,
+                required: true
             },
             y: {
                 type: Number,
-                default: 0
+                default: 0,
+                required: true
             },
             diameter: {
                 type: Number,
-                default: 0
+                default: 0,
+                required: true
             }
         },
         methods: {

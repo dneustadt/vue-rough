@@ -7,19 +7,23 @@
         props: {
             x: {
                 type: Number,
-                default: 0
+                default: 0,
+                required: true
             },
             y: {
                 type: Number,
-                default: 0
+                default: 0,
+                required: true
             },
             width: {
                 type: Number,
-                default: 0
+                default: 0,
+                required: true
             },
             height: {
                 type: Number,
-                default: 0
+                default: 0,
+                required: true
             }
         },
         methods: {

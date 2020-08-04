@@ -2,7 +2,7 @@
     import element from "../mixins/element";
 
     export default {
-        name: 'RoughLinearPath',
+        name: 'RoughCurve',
         mixins: [ element ],
         props: {
             points: {
@@ -12,7 +12,7 @@
         },
         methods: {
             handler(forceRender = false) {
-                this.createElement('linearPath', [this.points], forceRender);
+                this.createElement('curve', [this.points], forceRender);
             }
         }
     };
