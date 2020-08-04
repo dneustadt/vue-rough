@@ -1,0 +1,58 @@
+export default {
+    props: {
+        roughness: Number,
+        bowing: Number,
+        seed: Number,
+        stroke: String,
+        strokeWidth: Number,
+        fill: String,
+        fillStyle: String,
+        fillWeight: Number,
+        hachureAngle: Number,
+        hachureGap: Number,
+        curveStepCount: Number,
+        curveFitting: Number,
+        strokeLineDash: Array,
+        strokeLineDashOffset: Number,
+        fillLineDash: Array,
+        fillLineDashOffset: Number,
+        disableMultiStroke: Boolean,
+        disableMultiStrokeFill: Boolean,
+        simplification: Number,
+        dashOffset: Number,
+        dashGap: Number,
+        zigzagOffset: Number
+    },
+    data() {
+        return {
+            element: null
+        };
+    },
+    methods: {
+        createElement: function (func, ops, forceRender = false) {
+            const rough = this.$parent.rough;
+            const props = Object.assign(
+                {},
+                ...Object.entries(this.$props).map(([key, value]) => (
+                    value !== undefined && { [key]: value }
+                ))
+            );
+
+            if (forceRender) {
+                rough[func](...ops, props);
+
+                return;
+            }
+
+            if (rough.svg) {
+                if (this.element) this.$parent.remove(this.element);
+
+                this.element = rough[func](...ops, props);
+
+                this.$parent.append(this.element);
+            } else {
+                this.$parent.$emit('rerender');
+            }
+        }
+    }
+}
