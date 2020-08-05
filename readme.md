@@ -4,7 +4,7 @@ A small components library to use [Rough.js](https://github.com/rough-stuff/roug
 
 ## Examples
 
-[https://vue-rough.neustadt.dev](https://vue-rough.neustadt.dev) (coming soon)
+[https://vue-rough.neustadt.dev](https://vue-rough.neustadt.dev)
 
 ## Installation
 
