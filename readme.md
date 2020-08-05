@@ -22,14 +22,14 @@ Vue.use(VueRough);
 
 These wrap around visual components. You can choose between canvas or SVG as the container format.
 
-```
+```vue
 <rough-canvas 
     width="500px" 
     height="500px"
     :options="options"
 ></rough-canvas>
 ```
-```
+```vue
 <rough-svg 
     width="500px" 
     height="500px"
@@ -48,7 +48,7 @@ All components may use additional properties. See the [Rough.js wiki](https://gi
 for a full list of options. Components must be placed inside `rough-canvas` or `rough-svg`
 
 ### rough-line
-```
+```vue
 <rough-line
     :x1="1"
     :y1="1"
@@ -58,7 +58,7 @@ for a full list of options. Components must be placed inside `rough-canvas` or `
 ```
 
 ### rough-rectangle
-```
+```vue
 <rough-rectangle
     :x1="20"
     :y1="20"
@@ -68,7 +68,7 @@ for a full list of options. Components must be placed inside `rough-canvas` or `
 ```
 
 ### rough-ellipse
-```
+```vue
 <rough-ellipse
     :x="20"
     :y="20"
@@ -78,7 +78,7 @@ for a full list of options. Components must be placed inside `rough-canvas` or `
 ```
 
 ### rough-circle
-```
+```vue
 <rough-circle
     :x="80"
     :y="80"
@@ -87,21 +87,21 @@ for a full list of options. Components must be placed inside `rough-canvas` or `
 ```
 
 ### rough-linear-path
-```
+```vue
 <rough-linear-path
     :points="[[80, 10], [120, 20], [80, 120], [80, 100]]"
 />
 ```
 
 ### rough-polygon
-```
+```vue
 <rough-polygon
     :vertices="[[390, 130], [490, 140], [350, 240], [490, 220]]"
 />
 ```
 
 ### rough-arc
-```
+```vue
 <rough-arc
     :x="350"
     :y="300"
@@ -114,14 +114,14 @@ for a full list of options. Components must be placed inside `rough-canvas` or `
 ```
 
 ### rough-curve
-```
+```vue
 <rough-curve
     :points="[[10,328],[30,373],[50,390],[70,373],[90,328],[110,272],[130,227],[150,210],[170,227],[190,272],[210,328],[230,373],[250,390],[270,373],[290,328],[310,272],[330,227],[350,210],[370,227],[390,272]]"
 />
 ```
 
 ### rough-path
-```
+```vue
 <rough-path
     d="M0 0l128 220.8L256 0h-51.2L128 132.48 50.56 0H0z"
 />
