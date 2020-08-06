@@ -1,6 +1,6 @@
 {
   "name": "vue-rough",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A small components library to use Rough.js in Vue.",
   "homepage": "https://vue-rough.neustadt.dev",
   "bugs": {

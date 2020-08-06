@@ -35,6 +35,14 @@ export default {
     render() {
         return this.$scopedSlots;
     },
+    destroyed() {
+        const rough = this.$parent.rough;
+        if (rough.svg) {
+            if (this.element) this.$parent.remove(this.element);
+        } else {
+            this.$parent.$emit('rerender');
+        }
+    },
     methods: {
         createElement: function (func, ops, forceRender = false) {
             const rough = this.$parent.rough;

@@ -3295,7 +3295,7 @@ var es_object_keys = __webpack_require__("b64b");
 // EXTERNAL MODULE: ./node_modules/core-js/modules/web.dom-collections.for-each.js
 var web_dom_collections_for_each = __webpack_require__("159b");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"0e196a42-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/RoughCanvas.vue?vue&type=template&id=061c4e15&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"00210525-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/RoughCanvas.vue?vue&type=template&id=061c4e15&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('canvas',{attrs:{"width":_vm.width,"height":_vm.height}},[(_vm.rough)?_vm._t("default"):_vm._e()],2)}
 var staticRenderFns = []
 
@@ -3475,7 +3475,7 @@ var component = normalizeComponent(
 )
 
 /* harmony default export */ var RoughCanvas = (component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"0e196a42-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/RoughSvg.vue?vue&type=template&id=32245f82&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"00210525-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/RoughSvg.vue?vue&type=template&id=32245f82&
 var RoughSvgvue_type_template_id_32245f82_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('svg',{attrs:{"width":_vm.width,"height":_vm.height}},[(_vm.rough)?_vm._t("default"):_vm._e()],2)}
 var RoughSvgvue_type_template_id_32245f82_staticRenderFns = []
 
@@ -3758,6 +3758,15 @@ function _toConsumableArray(arr) {
   },
   render: function render() {
     return this.$scopedSlots;
+  },
+  destroyed: function destroyed() {
+    var rough = this.$parent.rough;
+
+    if (rough.svg) {
+      if (this.element) this.$parent.remove(this.element);
+    } else {
+      this.$parent.$emit('rerender');
+    }
   },
   methods: {
     createElement: function createElement(func, ops) {

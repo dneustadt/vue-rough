@@ -43,8 +43,8 @@ options.
 
 ## Visual Components
 
-Shown below is a quick overview over the available components with their required properties.
-All components may use additional properties. See the [Rough.js wiki](https://github.com/rough-stuff/rough/wiki#options) for a list of available
+Shown below is a quick overview of the available components with their required properties.
+All components may use additional properties. See the [Rough.js wiki](https://github.com/rough-stuff/rough/wiki#options)
 for a full list of options. Components must be placed inside `rough-canvas` or `rough-svg`
 
 ### rough-line
