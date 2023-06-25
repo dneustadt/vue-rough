@@ -33,7 +33,7 @@ export default {
         this.handler();
     },
     render() {
-        return this.$scopedSlots;
+        return this.$slots.default ? this.$slots.default() : [];
     },
     destroyed() {
         const rough = this.$parent.rough;
@@ -46,6 +46,10 @@ export default {
     methods: {
         createElement: function (func, ops, forceRender = false) {
             const rough = this.$parent.rough;
+            if (!rough) {
+                console.error("Parent component does not provide a Rough.js instance.");
+                return;
+            }
             const props = Object.assign(
                 {},
                 ...Object.entries(this.$props).map(([key, value]) => (
@@ -59,7 +63,7 @@ export default {
                 return;
             }
 
-            if (rough.svg) {
+            if (rough?.svg) {
                 if (this.element) this.$parent.remove(this.element);
 
                 this.element = rough[func](...ops, props);

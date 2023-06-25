@@ -1,6 +1,6 @@
 {
-  "name": "vue-rough",
-  "version": "1.1.0",
+  "name": "vue3-rough",
+  "version": "1.0.9",
   "description": "A small components library to use Rough.js in Vue.",
   "homepage": "https://vue-rough.neustadt.dev",
   "bugs": {
@@ -15,20 +15,26 @@
   "contributors": [
     "David Neustadt <d@neustadt.dev>"
   ],
-  "main": "dist/VueRough.umd.min.js",
-  "unpkg": "dist/VueRough.umd.min.js",
-  "module": "dist/VueRough.common.js",
+  "main": "dist/VueRough.umd.js",
+  "module": "dist/VueRough.es.js",
+  "exports": {
+    ".": {
+      "import": "dist/VueRough.es.js",
+      "require": "dist/VueRough.umd.js"
+    }
+  },
   "scripts": {
-    "build": "vue-cli-service build --target lib --name VueRough src/index.js && rm ./dist/demo.html"
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
   },
   "dependencies": {
-    "roughjs": "^4.3.1"
+    "roughjs": "^4.3.1",
+    "vue": "^3.0.0"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "~4.4.0",
-    "@vue/cli-plugin-eslint": "~4.4.0",
-    "@vue/cli-service": "~4.4.0",
-    "roughjs": "^4.3.1"
+    "@vitejs/plugin-vue": "^4.2.3",
+    "vite": "^4.x"
   },
   "peerDependencies": {
     "roughjs": "^4.3.1"

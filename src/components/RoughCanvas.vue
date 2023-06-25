@@ -2,47 +2,35 @@
     <canvas
         :width="width"
         :height="height"
+        ref="canvasRef"
     >
         <slot v-if="rough" />
     </canvas>
 </template>
 
 <script>
-    import rough from 'roughjs/bundled/rough.esm.js';
+import { ref, onMounted } from 'vue';
+import rough from 'roughjs/bundled/rough.esm.js';
 
-    export default {
-        name: 'RoughCanvas',
-        props: {
-            width: String,
-            height: String,
-            config: Object
-        },
-        rendering: false,
-        data() {
-            return {
-                rough: null
-            };
-        },
-        mounted() {
-            this.rough = rough.canvas(this.$el, this.config);
+export default {
+    name: 'RoughCanvas',
+    props: {
+        width: String,
+        height: String,
+        config: Object,
+    },
+    setup(props) {
+        const canvasRef = ref(null);
+        const roughInstance = ref(null);
 
-            this.$on('rerender', this.clearCanvas);
-        },
-        methods: {
-            clearCanvas() {
-                if (!this.rendering) {
-                    this.rough.ctx.clearRect(0, 0, this.rough.canvas.width, this.rough.canvas.height);
+        onMounted(() => {
+            roughInstance.value = rough.canvas(canvasRef.value, props.config);
+        });
 
-                    this.$children.forEach((child) => {
-                       child.handler(true);
-                    });
-                }
-                this.rendering = true;
-
-                this.$nextTick().then(() => {
-                    this.rendering = false;
-                });
-            }
-        }
-    };
+        return {
+            rough: roughInstance,
+            canvasRef,
+        };
+    },
+};
 </script>
